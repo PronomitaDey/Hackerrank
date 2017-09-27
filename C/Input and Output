@@ -1,0 +1,22 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */  
+    int a,b,c;
+    int STDIN,STDOUT;
+    scanf("%d",&STDIN);
+    a=STDIN;
+    scanf("%d",&STDIN);
+    b=STDIN;
+    scanf("%d",&STDIN);
+    c=STDIN;
+    STDOUT=a+b+c;
+    printf("%d",STDOUT);
+    return 0;
+}
