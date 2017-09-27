@@ -1,0 +1,58 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include<iomanip>
+using namespace std;
+
+int calmed(int arr[],int start,int end){
+    int diff=end-start;
+    if(diff%2==1)
+        return arr[start+diff/2];
+    else 
+        return (arr[start+diff/2-1]+arr[start+diff/2])/2;
+}
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */ 
+    int m;
+    cin>>m;
+    int* x=new int[m];
+    int* f=new int[m];
+    int i;
+    for(i=0;i<m;i++)
+        cin>>x[i];
+    int n;
+    for(i=0;i<m;i++){
+         cin>>f[i];
+         n+=f[i];
+    }
+    
+    int* arr=new int[n];
+    
+    int j=0;
+    for(i=0;i<m;i++)
+            for(int k=1;k<=f[i];k++)
+                arr[j++]=x[i];
+    
+    sort(arr,arr+n);
+    double q1,q3;
+    if(n%2!=0){
+        q1=calmed(arr,0,n/2);
+        q3=calmed(arr,n/2+1,n);
+    }
+    else
+    {
+        q1=calmed(arr,0,n/2);
+        q3=calmed(arr,n/2,n);
+         
+    }
+    double d=q3-q1;
+    std::cout<<fixed<<setprecision(1)<<d<<endl;
+    
+    
+    delete x,f,arr;
+    x=NULL; f=NULL; arr=NULL;
+
+    return 0;
+}
