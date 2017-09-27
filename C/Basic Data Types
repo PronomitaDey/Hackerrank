@@ -1,0 +1,23 @@
+#include <iostream>
+#include <cstdio>
+#include<iomanip>
+using namespace std;
+
+int main() {
+    // Complete the code.
+    int num;
+    cin>>num;
+    long int lnum;
+    cin>>lnum;
+    char c;
+    cin>>c;
+    float f;
+    cin>>f;
+    double d;
+    cin>>d;
+    cout<<num<<endl<<lnum<<endl<<c<<endl;
+    std::cout<<setprecision(3)<<fixed<<f<<endl;
+    std::cout<<setprecision(9);
+    std::cout<<d<<endl;
+    return 0;
+}
